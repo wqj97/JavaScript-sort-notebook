@@ -21,26 +21,5 @@ function shellSort (arr) {
   return arr
 }
 
-function shellSort2 (arr) {
-  let gap = 1
-  while (gap < arr.length / 5) {
-    gap = gap * 5 + 1
-  }
-
-  for (; gap > 0; gap = Math.floor(gap / 5)) {
-    for (let i = gap; i < arr.length; i++) {
-      let j = i - gap
-      for (; j >= 0 && arr[j] > arr[i]; j -= gap) {
-        let temp = arr[i]
-        arr[i] = arr[j]
-        arr[j] = temp
-      }
-      console.log(arr, gap)
-    }
-  }
-
-  return arr
-}
-
 console.log(arr)
-console.log(shellSort2([...arr]))
+console.log(shellSort([...arr]))
